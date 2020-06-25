@@ -1,4 +1,4 @@
-#CoRec_jsAnalyzer
+# CoRec_jsAnalyzer
 
 This project is provided to investigate and recommend co-changed entities for JavaScript programs.
 
