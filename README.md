@@ -57,3 +57,7 @@ Change the project String Array in vt.edu.graph.LMatchPatternExtraction, vt.edu.
 4. Change line 322 and line 323 in wekaPre.WekaTest to where the training and testing arffs are stored.
 
 5. Many typeds of machine learning models can be used to train the data in wekaPre.WekaTest.
+
+# Data link (get data from link below)
+
+https://drive.google.com/drive/folders/1TDcIHvBMLJJ00jUzV_-SYwhlbc-CYMkp?usp=sharing
