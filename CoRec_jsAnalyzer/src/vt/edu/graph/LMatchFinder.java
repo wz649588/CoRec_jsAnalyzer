@@ -97,9 +97,11 @@ private boolean executeFromScratch;
 		
 		stmt.close();
 		conn.close();
+		int total_rows = 3000;
 		
 		System.out.println("Total: " + bugNameList.size());
-		for (int i = 0; i < bugNameList.size(); i++) {
+//		for (int i = 0; i < bugNameList.size(); i++) {
+		for (int i = 0; i < total_rows; i++) {
 			
 			System.out.println("########" + (i + 1) + "/" + bugNameList.size());
 			
@@ -112,7 +114,8 @@ private boolean executeFromScratch;
 				if (g1.vertexSet().size() <= 1) // only check a graph with more than 1 node
 					continue;
 				Set<GraphPair> matchesForG1 = new HashSet<>();
-				for (int j = 0; j < bugNameList.size(); j++) {
+//				for (int j = 0; j < bugNameList.size(); j++) {
+				for (int j = 0; j < total_rows; j++) {
 					if (i == j) continue;
 					String bugName2 = bugNameList.get(j);
 					List<Graph<GraphNode, GraphEdge>> graphList2 = getCommitGraphList(bugName2);
@@ -144,9 +147,9 @@ private boolean executeFromScratch;
 //		String[] projects = {"node", "pdf", "webpack1", "electron", "Ghost", "storybook"};
 		for (String project: projects) {
 			System.out.println(project);
-//			if (!project.equals("atom")) continue;
-			String editScriptTable = "classify_graphmerge_final_" + project;
-			String largestMatchTable = "em_largest_notest_" + project;
+			if (!project.equals("node")) continue;
+			String editScriptTable = "classify_graphmerge_final_revision_" + project;
+			String largestMatchTable = "em_largest_notest_revision_1" + project;
 			LMatchFinder finder = new LMatchFinder(editScriptTable, largestMatchTable, true);
 			finder.execute();
 		}
